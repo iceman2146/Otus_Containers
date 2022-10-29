@@ -22,7 +22,7 @@ public:
         std::cout << "TwoWayContainer const constructor" << std::endl;
     }
 
-    TwoWayContainer(TwoWayContainer &&other) noexcept
+    TwoWayContainer(TwoWayContainer &&other) 
     {
         m_first = other.m_first;
         other.m_first = nullptr;

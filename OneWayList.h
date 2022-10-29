@@ -211,8 +211,6 @@ public:
         bool operator==(const Iterator &it) const { return m_one == it.m_one; }
 
         bool operator!=(const Iterator &it) const { return !(*this == it); }
-
-    private:
     };
 
     Iterator begin() const { return m_first; }
