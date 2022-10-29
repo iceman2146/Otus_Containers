@@ -19,7 +19,7 @@ public:
     TwoWayContainer(const TwoWayContainer &other)
         : TwoWayContainer{other.m_first()}, TwoWayContainer{other.m_last()}
     {
-        std::cout << "TwoWayContainer const constructor" << std::endl;
+        std::cout << "TwoWayContainer copy constructor" << std::endl;
     }
 
     TwoWayContainer(TwoWayContainer &&other) 

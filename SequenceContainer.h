@@ -8,11 +8,11 @@ class SequenceContainer
   T *m_region{};
 
 public:
-  SequenceContainer() : m_size{0}, m_cap{0}, m_region{nullptr} { std::cout << "SequenceContainer const constructor" << std::endl; }
+  SequenceContainer() : m_size{0}, m_cap{0}, m_region{nullptr} { std::cout << "SequenceContainer constructor" << std::endl; }
 
   SequenceContainer(const SequenceContainer &other) : SequenceContainer{other.m_region()}
   {
-    std::cout << "SequenceContainer const constructor" << std::endl;
+    std::cout << "SequenceContainer copy constructor" << std::endl;
   }
 
   SequenceContainer(SequenceContainer &&other)
