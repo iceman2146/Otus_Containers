@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(cmake-example)
+project(ContainerPRJ)
 
 add_executable(main 
 main.cpp
@@ -7,6 +7,8 @@ main.cpp
 "OneWayList.h"
 "TwoWayList.h"
 )
+
+
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
     CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(main PRIVATE 
@@ -23,5 +25,4 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         /WX
     )
 endif()
-
 set_target_properties(main PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)

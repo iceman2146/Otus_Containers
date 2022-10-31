@@ -22,7 +22,7 @@ public:
     OneWayContainer(const OneWayContainer &other) : OneWayContainer{other.m_first()},
                                                     OneWayContainer{other.m_last()}
     {
-        std::cout << "OneWayContainer const constructor" << std::endl;
+        std::cout << "OneWayContainer copy constructor" << std::endl;
     }
 
     OneWayContainer(OneWayContainer &&other)

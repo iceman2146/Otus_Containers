@@ -22,7 +22,7 @@ template <typename T>
 void test_seq(T &container, int razmer)
 {
 
-  // T icont;
+  
   std::cout << "Sozdaem container" << std::endl;
   if (!container.is_empty())
   {
@@ -66,7 +66,7 @@ void test_seq(T &container, int razmer)
   std::cout << std::endl;
 
   print_seq(container);
-  // icont.~SequenceContainer();
+  
 }
 
 int main()
@@ -80,7 +80,7 @@ int main()
 
   TwoWayContainer<int> TwoWayContainer_int;
   test_seq(TwoWayContainer_int, Kol_vo_elementov);
- OneWayContainer<int> OneWayContainer_int3;
+
  // OneWayContainer<int> OneWayContainer_int2{OneWayContainer_int3};
   //OneWayContainer_int2=OneWayContainer_int;
 
