@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "SequenceContainer.h"
-#include "OneWayList.h"
+//#include "OneWayList.h"
 //#include "TwoWayList.h"
 
 template <typename T>
@@ -74,11 +74,11 @@ int main()
   size_t Kol_vo_elementov = 10;
   SequenceContainer<int> SequenceContainer_int;
   test_seq(SequenceContainer_int, Kol_vo_elementov);
-  
+  /*
   OneWayContainer<int> OneWayContainer_int;
   test_seq(OneWayContainer_int, Kol_vo_elementov);
   OneWayContainer<int> OneWayContainer_int2{OneWayContainer_int};
-/*
+
   TwoWayContainer<int> TwoWayContainer_int;
   test_seq(TwoWayContainer_int, Kol_vo_elementov);
 
