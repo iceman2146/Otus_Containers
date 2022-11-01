@@ -1,0 +1,10 @@
+^C:\USERS\ICEMA\DESKTOP\OTUS_ALL-MASTER\11\HOMEWORK\BUILD\CMAKEFILES\E68115B2363E19CE5C3C2DD2CED13ABC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/icema/Desktop/OTUS_ALL-master/11/Homework -BC:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/build/ContainerPRJ.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
