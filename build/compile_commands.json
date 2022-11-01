@@ -1,7 +1,0 @@
-[
-{
-  "directory": "C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -g -Wall -Wextra -Werror -pedantic -std=gnu++1z -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\icema\\Desktop\\OTUS_ALL-master\\11\\Homework\\main.cpp",
-  "file": "C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/main.cpp"
-}
-]
