@@ -5,13 +5,15 @@ class OneWayContainer
 {
     struct Node
     {
-        Node *next;//ukazatel na sleduushuu nodu
-        T data;// kakieto dannie
+        Node *next; // ukazatel na sleduushuu nodu
+        T data;     // kakieto dannie
+        Node() : next{nullptr} {}
+        Node(const T &value) : next{nullptr}, data{value} {}
     };
 
-    size_t m_size;//kol-vo nod
-    Node *m_first;//ukazatel na pervuu nodu
-    Node *m_last;//ukazatel na poslednuu nodu
+    size_t m_size; // kol-vo nod
+    Node *m_first; // ukazatel na pervuu nodu
+    Node *m_last;  // ukazatel na poslednuu nodu
 
 public:
     OneWayContainer() : m_size{0}, m_first{nullptr}, m_last{nullptr}
@@ -19,31 +21,34 @@ public:
         std::cout << "OneWayContainer constructor" << std::endl;
     }
 
-    OneWayContainer(const OneWayContainer &other) 
+    OneWayContainer(const OneWayContainer &other)
     {
-        if (other.m_first != nullptr) {
-			
-			
-			Node* other_ptr_toCopy = other.m_first;
-			Node* otherPtrTemp = nullptr;
+        if (other.m_first != nullptr)
+        {
 
-			while (other_ptr_toCopy != nullptr) {
-				otherPtrTemp = new Node(other_ptr_toCopy->data);
+            Node *other_ptr_toCopy = other.m_first;
+            Node *otherPtrTemp = nullptr;
 
-				if (m_first == nullptr) { 
-					m_first = otherPtrTemp;
-					m_last = otherPtrTemp;
-				}
-				else { 
-					m_last->node.next = otherPtrTemp;
-					m_last = otherPtrTemp;
-				}
+            while (other_ptr_toCopy != nullptr)
+            {
+                otherPtrTemp = new Node(other_ptr_toCopy->data);
 
-				other_ptr_toCopy = other_ptr_toCopy->next_node;
-			}
+                if (m_first == nullptr)
+                {
+                    m_first = otherPtrTemp;
+                    m_last = otherPtrTemp;
+                }
+                else
+                {
+                    m_last->next = otherPtrTemp;
+                    m_last = otherPtrTemp;
+                }
 
-			m_size = other.m_size;
-		}
+                other_ptr_toCopy = other_ptr_toCopy->next;
+            }
+
+            m_size = other.m_size;
+        }
         std::cout << "OneWayContainer copy constructor" << std::endl;
     }
 

@@ -100,4 +100,6 @@ CMakeFiles/main.dir/main.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc \
- C:\Users\icema\Desktop\OTUS_ALL-master\11\Homework\SequenceContainer.h
+ C:\Users\icema\Desktop\OTUS_ALL-master\11\Homework\SequenceContainer.h \
+ C:\Users\icema\Desktop\OTUS_ALL-master\11\Homework\OneWayList.h \
+ C:\Users\icema\Desktop\OTUS_ALL-master\11\Homework\TwoWayList.h

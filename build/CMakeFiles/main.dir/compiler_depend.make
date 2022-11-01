@@ -111,7 +111,9 @@ CMakeFiles/main.dir/main.cpp.obj: C:/Users/icema/Desktop/OTUS_ALL-master/11/Home
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/istream \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc \
-  C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/SequenceContainer.h
+  C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/SequenceContainer.h \
+  C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/OneWayList.h \
+  C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/TwoWayList.h
 
 
 C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/main.cpp:
@@ -323,3 +325,7 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc:
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/istream.tcc:
 
 C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/SequenceContainer.h:
+
+C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/OneWayList.h:
+
+C:/Users/icema/Desktop/OTUS_ALL-master/11/Homework/TwoWayList.h:
