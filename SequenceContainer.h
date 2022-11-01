@@ -3,16 +3,32 @@
 template <typename T>
 class SequenceContainer
 {
-  size_t m_size;
-  size_t m_cap;
-  T *m_region{};
+
+  size_t m_size; // kol-vo elementov
+  size_t m_cap;  // emkost konteinera
+  T *m_region{}; // ukazatel na pervii element
 
 public:
-  SequenceContainer() : m_size{0}, m_cap{0}, m_region{nullptr} { std::cout << "SequenceContainer constructor" << std::endl; }
+  SequenceContainer() : m_size{0}, m_cap{0}, m_region{nullptr} // def const
+  {
+    std::cout << "SequenceContainer constructor" << std::endl;
+  }
 
-  SequenceContainer(const SequenceContainer &other) : SequenceContainer{other.m_region()}
+  SequenceContainer(const SequenceContainer &other)
   {
     std::cout << "SequenceContainer copy constructor" << std::endl;
+    if (other.m_region != nullptr)
+    {
+      m_region = new T[other.m_cap];
+      m_cap = other.m_cap;
+
+      for (size_t i = 0; i < other.m_size; ++i)
+      {
+        m_region[i] = other.m_region[i];
+      }
+
+      m_size = other.m_size;
+    }
   }
 
   SequenceContainer(SequenceContainer &&other)
@@ -39,18 +55,22 @@ public:
   {
     std::cout << "SequenceContainer::operator=" << std::endl;
     SequenceContainer temp{rhs};
+    if ((this != &temp) && (temp.m_region != nullptr))
+    {
+      clr();
 
-    T *data = m_region;
-    m_region = temp.m_region;
-    temp.m_region = data;
+      T *data = m_region;
+      m_region = temp.m_region;
+      temp.m_region = data;
 
-    size_t size = m_size;
-    m_size = temp.m_size;
-    temp.m_size = size;
+      size_t size = m_size;
+      m_size = temp.m_size;
+      temp.m_size = size;
 
-    size_t cap = m_cap;
-    m_cap = temp.m_cap;
-    temp.m_cap = cap;
+      size_t cap = m_cap;
+      m_cap = temp.m_cap;
+      temp.m_cap = cap;
+    }
 
     return *this;
   }
@@ -64,6 +84,7 @@ public:
 
   size_t size() const { return m_size; }
   size_t capacity() const { return m_cap; }
+
   bool push_back(const T &val)
   {
     if (m_size < m_cap)
@@ -90,7 +111,22 @@ public:
 
     return true;
   }
+  void clr()
+  {
+    if (m_region != nullptr)
+    {
+      for (size_t i = 0; i < m_size; ++i)
+      {
+        m_region[i].~T(); 
+      }
 
+      delete[] m_region;
+      m_region = nullptr;
+    }
+
+    m_cap = 0;
+    m_size = 0;
+  }
   bool insert(const size_t &pos, const T &val)
   {
     if (m_size < m_cap)

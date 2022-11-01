@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.5)
 project(ContainerPRJ)
 
 add_executable(main 
@@ -20,7 +20,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(main PRIVATE
-        /EHsc
+        /EHa
         /W4
         /WX
     )

@@ -2,13 +2,13 @@
 
 #include "SequenceContainer.h"
 #include "OneWayList.h"
-#include "TwoWayList.h"
+//#include "TwoWayList.h"
 
 template <typename T>
 void print_seq(T &container)
 {
   std::cout << "array: ";
-  for (auto i = 0; i < container.size(); ++i)
+  for (size_t i = 0; i < container.size(); ++i)
   {
     std::cout << container[i] << ' ';
   }
@@ -71,18 +71,19 @@ void test_seq(T &container, int razmer)
 
 int main()
 {
-  int Kol_vo_elementov = 10;
+  size_t Kol_vo_elementov = 10;
   SequenceContainer<int> SequenceContainer_int;
   test_seq(SequenceContainer_int, Kol_vo_elementov);
-
+  
   OneWayContainer<int> OneWayContainer_int;
   test_seq(OneWayContainer_int, Kol_vo_elementov);
-
+  OneWayContainer<int> OneWayContainer_int2{OneWayContainer_int};
+/*
   TwoWayContainer<int> TwoWayContainer_int;
   test_seq(TwoWayContainer_int, Kol_vo_elementov);
 
- // OneWayContainer<int> OneWayContainer_int2{OneWayContainer_int3};
+  OneWayContainer<int> OneWayContainer_int2{OneWayContainer_int3};
   //OneWayContainer_int2=OneWayContainer_int;
-
+*/
   return 0;
 }

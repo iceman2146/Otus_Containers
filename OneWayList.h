@@ -5,13 +5,13 @@ class OneWayContainer
 {
     struct Node
     {
-        Node *next;
-        T data;
+        Node *next;//ukazatel na sleduushuu nodu
+        T data;// kakieto dannie
     };
 
-    size_t m_size;
-    Node *m_first;
-    Node *m_last;
+    size_t m_size;//kol-vo nod
+    Node *m_first;//ukazatel na pervuu nodu
+    Node *m_last;//ukazatel na poslednuu nodu
 
 public:
     OneWayContainer() : m_size{0}, m_first{nullptr}, m_last{nullptr}
@@ -19,9 +19,31 @@ public:
         std::cout << "OneWayContainer constructor" << std::endl;
     }
 
-    OneWayContainer(const OneWayContainer &other) : OneWayContainer{other.m_first()},
-                                                    OneWayContainer{other.m_last()}
+    OneWayContainer(const OneWayContainer &other) 
     {
+        if (other.m_first != nullptr) {
+			
+			
+			Node* other_ptr_toCopy = other.m_first;
+			Node* otherPtrTemp = nullptr;
+
+			while (other_ptr_toCopy != nullptr) {
+				otherPtrTemp = new Node(other_ptr_toCopy->data);
+
+				if (m_first == nullptr) { 
+					m_first = otherPtrTemp;
+					m_last = otherPtrTemp;
+				}
+				else { 
+					m_last->node.next = otherPtrTemp;
+					m_last = otherPtrTemp;
+				}
+
+				other_ptr_toCopy = other_ptr_toCopy->next_node;
+			}
+
+			m_size = other.m_size;
+		}
         std::cout << "OneWayContainer copy constructor" << std::endl;
     }
 
@@ -65,7 +87,7 @@ public:
 
     OneWayContainer &operator=(OneWayContainer &&other)
     {
-        OneWayContainer temp{std::move(rhs)};
+        OneWayContainer temp{std::move(other)};
         return *this = temp;
     }
     const T operator[](size_t index) const
